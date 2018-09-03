@@ -1,0 +1,32 @@
+<form #menuForm="ngForm" (ngSubmit)="onSubmit(menuForm)">
+    <input type="hidden" name="$key" #$key="ngModel" [(ngModel)]="menuService.selectedMenu.$key">
+  <div class="form-group">
+    <label>Menu</label>
+    <input class="form-control" name="nombre" #name="ngModel" [(ngModel)]="menuService.selectedMenu.nombre" placeholder="Nombre" required>
+  </div>
+  <div class="form-group">
+    <label>Descripcion</label>
+    <input class="form-control" name="descripcion" #position="ngModel" [(ngModel)]="menuService.selectedMenu.descripcion" placeholder="Descripcion">
+  </div>
+  <div class="form-group">
+    <label>precio</label>
+    <input class="form-control" name="precio" #office="ngModel" [(ngModel)]="menuService.selectedMenu.precio" placeholder="Precio">
+  </div>
+  <div class="form-group">
+    <label>Categoria</label>
+    <div class="input-group">
+        <div class="input-group-addon">
+          <i class="fa fa-dollar"></i>
+        </div>
+        <input class="form-control" name="categoria" #salary="ngModel" [(ngModel)]="menuService.selectedMenu.categoria" placeholder="Categoria">
+    </div>
+  </div>
+  <div class="form-group">
+    <button class="btn btn-default" type="submit" [disabled]="!menuForm.valid">
+      <i class="fa fa-floppy-o"></i>
+       Submit</button>
+    <button class="btn btn-default" type="button" (click)="resetForm(menuForm)">
+      <i class="fa fa-repeat"></i>
+       Reset</button>
+  </div>
+</form>

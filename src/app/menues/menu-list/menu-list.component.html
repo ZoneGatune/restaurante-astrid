@@ -1,0 +1,15 @@
+<h6 class="text-center">Menu Register</h6><br/>
+<table class="table table-sm table-hover">
+  <tr *ngFor="let menu of menuList">
+      <td>{{menu.nombre}}</td>
+      <td>{{menu.descripcion}}</td>
+      <td>
+        <a class="btn" (click)="onEdit(menu)">
+          <i class="fa fa-pencil-square-o"></i>
+        </a>
+        <a class="btn" (click)="onDelete(menu.$key)">
+          <i class="fa fa-trash-o"></i>
+        </a>
+      </td>
+  </tr>
+</table>
